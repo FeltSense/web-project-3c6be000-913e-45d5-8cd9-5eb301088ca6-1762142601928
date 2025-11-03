@@ -1,0 +1,80 @@
+{
+  "componentsToGenerate": [
+    "Navigation",
+    "Hero",
+    "FeaturedProjects",
+    "ServicesGrid",
+    "ClientLogos",
+    "Testimonials",
+    "TeamPreview",
+    "AboutStory",
+    "TeamBios",
+    "CompanyValues",
+    "ServicesList",
+    "ProcessSection",
+    "PricingTiers",
+    "PortfolioGrid",
+    "ProjectCard",
+    "CaseStudy",
+    "ContactForm",
+    "Footer"
+  ],
+  "estimatedChallenges": [
+    {
+      "component": "Navigation",
+      "challenge": "Multi-page navigation with active state indication and mobile menu",
+      "mitigation": "Use Link components with proper href paths, implement mobile hamburger menu with state management, add active styling based on current route"
+    },
+    {
+      "component": "FeaturedProjects",
+      "challenge": "Image carousel with smooth transitions and responsive images",
+      "mitigation": "Use CSS transforms for carousel, implement proper image aspect ratios, ensure touch swipe works on mobile"
+    },
+    {
+      "component": "PortfolioGrid",
+      "challenge": "Filterable grid with category buttons and dynamic rendering",
+      "mitigation": "Use state to track active filter, map through filtered array, ensure grid layout is responsive with CSS Grid"
+    },
+    {
+      "component": "TeamBios",
+      "challenge": "Grid of team members with expandable details or modals",
+      "mitigation": "Create reusable TeamMember component, use grid layout, implement modal or accordion for expanded bios"
+    },
+    {
+      "component": "ContactForm",
+      "challenge": "Multi-field form with validation and service selection",
+      "mitigation": "Use controlled inputs with useState, implement basic validation, add service dropdown/checkboxes"
+    },
+    {
+      "component": "Testimonials",
+      "challenge": "Auto-rotating carousel with manual controls",
+      "mitigation": "Use setInterval for auto-rotation, implement prev/next buttons, ensure proper cleanup on unmount"
+    },
+    {
+      "component": "ServicesGrid",
+      "challenge": "Service cards with hover effects and links to detailed pages",
+      "mitigation": "Create ServiceCard component with consistent styling, add CSS hover transforms, link to services page sections"
+    },
+    {
+      "component": "CaseStudy",
+      "challenge": "Rich content layout with images, metrics, and testimonials",
+      "mitigation": "Use flexible layout with image galleries, stat counters, and quote blocks"
+    }
+  ],
+  "fixerContext": {
+    "expectedStructure": "Simple Next.js app. Components in components/ folder at root. app/page.tsx imports from ../components/",
+    "importPaths": "Use '../components/ComponentName' from app/page.tsx",
+    "commonIssues": [
+      "Missing 'use client' directive on interactive components (Navigation, PortfolioGrid, ContactForm, Testimonials)",
+      "Import path mismatches - ensure all imports use '../components/' from app/page.tsx",
+      "Image components need proper width/height or fill prop with parent container",
+      "Link components must have valid href attributes for all pages",
+      "State management for filters, carousels, and forms needs proper useState hooks",
+      "CSS modules or Tailwind classes should be consistent across all pages",
+      "Ensure all interactive elements have proper event handlers",
+      "Portfolio filter buttons need active state styling",
+      "Mobile menu toggle needs state management in Navigation component",
+      "Form validation should prevent empty submissions"
+    ]
+  }
+}
